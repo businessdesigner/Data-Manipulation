@@ -1,0 +1,22 @@
+# First change directory
+setwd(".../Final")
+tennis <- read.csv("boxplot.csv", header=TRUE)
+attach()
+
+# Change inner margin
+par(mar=c(10, 6, 2, 1))
+# Change outer margin
+par(oma=c(0.5,0,1,.5))
+# Draw the Plot
+boxplot(Temp~Result, data=tennis, ylab="Temperature (°C)", main = "Result Differences based on Temperature Variations", las=2)
+boxplot(Temp~Result+Player, data=tennis, ylab="Temperature (°C)", main = "Result Differences based on Temperature Variations", las=2)
+
+boxplot(Pressure~Result, data=tennis, ylab="Pressure Atmospheric pressure (hPa)", main = "Result Differences based on Pressure Variations", las=2)
+boxplot(Pressure~Result+Player, data=tennis, ylab="Pressure Atmospheric pressure (hPa)", main = "Result Differences based on Pressure Variations", las=2)
+
+boxplot(Humidity~Result, data=tennis, ylab="Humidity (%)", main = "Result Differences based on Humidity Variations", las=2)
+boxplot(Humidity~Result+Player, data=tennis, ylab="Humidity (%)", main = "Result Differences based on Humidity Variations", las=2)
+
+boxplot(WindSpeed~Result, data=tennis, ylab="Wind Speed (meter/sec)", main = "Result Differences based on Wind Speed Variations", las=2)
+boxplot(WindSpeed~Result+Player, data=tennis, ylab="Wind Speed (meter/sec)", main = "Result Differences based on Wind Speed Variations", las=2)
+detach()
